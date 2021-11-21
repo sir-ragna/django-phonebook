@@ -6,12 +6,17 @@ from phonebook.models import PhoneRecord
 from phonebook.forms import NewPhoneRecordForm
 
 def new_phone_record(request):
-    if request.method == 'POST':
-        if "name" in request.POST and "number" in request.POST:
-            name = request.POST["name"]
-            number = request.POST["number"]
-            new_phone_record = PhoneRecord(name=name, number=number)
-            new_phone_record.save()
+    new_record_form = NewPhoneRecordForm(request.POST)
+    if new_record_form.is_valid():
+        name = new_record_form.cleaned_data["name"]
+        number = new_record_form.cleaned_data["number"]
+
+        if len(PhoneRecord.objects.filter(name=name)) == 0:
+            # Add to the database
+            PhoneRecord(name=name, number=number).save()
+        else:
+            # Already exists TODO give some user feedback
+            pass
     
     # TODO user feedback about success or failure of saving the record
 
