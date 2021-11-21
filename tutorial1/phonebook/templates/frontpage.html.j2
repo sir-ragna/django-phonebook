@@ -34,6 +34,7 @@
         <!-- generated form below -->
         <h3>Create a new record</h3>
         <form class="form" method="POST" action="{% url 'new' %}">
+            {% csrf_token %}
             {{ new_records_form.as_p }}
             <button type="submit" class="btn button">Save</button>
         </form>
