@@ -1,4 +1,4 @@
-**/*.pyc
+*.pyc
 *.sqlite3
 venv/**
 venv

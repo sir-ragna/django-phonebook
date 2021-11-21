@@ -8,4 +8,15 @@
     </div>
 </div>
 
+{% for record in phone_records %}
+    <div class="row">
+        <div class="col-6">
+            <span>{{ record.name }}</span>
+        </div>
+        <div class="col">
+            <span>{{ record.number }}</span>
+        </div>
+    </div>
+{% endfor %}
+
 {% endblock content %}
