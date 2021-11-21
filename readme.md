@@ -18,7 +18,7 @@ Init venv environment
 Do the migrations
 
     python manage.py makemigrations phonebook
-    python manage.py migrate
+    python manage.py showmigrations
     python manage.py migrate
 
 
