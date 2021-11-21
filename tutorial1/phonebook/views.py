@@ -4,7 +4,15 @@ from django.shortcuts import render
 from phonebook.models import PhoneRecord
 
 def index(request):
-    new_phone_record = PhoneRecord("1234", "John")
+    
+    PhoneRecord.objects.all().delete() # remove all objects
+
+    # Create new user John
+    new_phone_record = PhoneRecord(name="John", number="12346")
+    new_phone_record.save()
+
+    # Create new user Mary
+    new_phone_record = PhoneRecord(name="Marry", number="00607")
     new_phone_record.save()
 
     all_records = PhoneRecord.objects.all()
