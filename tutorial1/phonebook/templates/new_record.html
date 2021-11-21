@@ -1,15 +1,16 @@
 <div class="row">
     <div class="col">
         <h1>Add a new phonebook entry</h1>
-        <form class="form">
+        <form class="form" method="POST" action="{% url 'new' %}">
+            {% csrf_token %}
             <div class="input-group mb-3">
                 <span class="input-group-text" id="inputGroup-sizing-default">Name</span>
-                <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+                <input name="name" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
             </div>
 
             <div class="input-group mb-3">
                 <span class="input-group-text" id="inputGroup-sizing-default">Number</span>
-                <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+                <input name="number" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
             </div>
             <button type="submit" class="btn button">Save</button>
         </form>
