@@ -3,6 +3,7 @@ from django.urls import reverse
 from django.shortcuts import render
 
 from phonebook.models import PhoneRecord
+from phonebook.forms import NewPhoneRecordForm
 
 def new_phone_record(request):
     if request.method == 'POST':
@@ -32,6 +33,11 @@ def index(request):
     all_records = PhoneRecord.objects.all()
     #PhoneRecord.objects.filter(name="john")
 
+    new_records_form = NewPhoneRecordForm()
+
     return render(request, "frontpage.html.j2", 
-        { "phone_records" : all_records }
+        { 
+          "phone_records" : all_records, 
+          "new_records_form": new_records_form 
+        }
     )

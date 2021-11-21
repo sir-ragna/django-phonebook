@@ -31,7 +31,12 @@
         </table>
     </div>
     <div class="col-6">
-        {% include "new_record.html" %}
+        <!-- generated form below -->
+        <h3>Create a new record</h3>
+        <form class="form" method="POST" action="{% url 'new' %}">
+            {{ new_records_form.as_p }}
+            <button type="submit" class="btn button">Save</button>
+        </form>
     </div>
 </div>
 
