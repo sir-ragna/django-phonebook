@@ -8,7 +8,7 @@ def new_phone_record(request):
     # TODO Save phone record
     
     # redirect to the main page
-    return HttpResponseRedirect(reverse(index))
+    return HttpResponseRedirect(reverse('index'))
 
 def index(request):
     
