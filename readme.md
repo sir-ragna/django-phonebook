@@ -12,5 +12,11 @@ Init venv environment
   - mkdir phonebook
   - create urls.py
   - create views.py
+  - create models.py
+    - Create `PhoneRecord` model
 
+Do the migrations
 
+    python manage.py makemigrations phonebook
+    python manage.py migrate
+    python manage.py migrate
