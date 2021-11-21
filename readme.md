@@ -20,3 +20,7 @@ Do the migrations
     python manage.py makemigrations phonebook
     python manage.py migrate
     python manage.py migrate
+
+
+Initially create a form with bootstrap in `new_record.html`.
+To be replaced with the automatic _form_ generation of Django.
